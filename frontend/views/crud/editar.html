@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Mascota</title>
+    <link rel="icon" type="image/x-icon" href="../../resources/icon.ico">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- JavaScript -->
+    <script src="../../js/crud/editar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+    
+    <!-- NAVBAR -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center gap-x-2">
+            <div class="relative w-14 md:w-16 lg:w-20 h-14 md:h-16 lg:h-20">
+                <a href="principal.html">
+                    <img src="../../resources/imagenes/logo-dark.png" alt="logo" class="absolute inset-0 w-full h-full object-contain hidden dark:block">
+                </a>
+            </div>
+            <a href="principal.html">
+                <h1 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Veterinarios García</h1>
+            </a>
+        </div>
+        <ul class="flex space-x-6">
+            <li><a href="alta.html" class="text-blue-500 hover:text-blue-400 transition">Alta</a></li>
+            <li><a href="modificar.html" class="text-blue-500 hover:text-blue-400 transition">Modificar</a></li>
+            <li><a href="eliminar.html" class="text-blue-500 hover:text-blue-400 transition">Eliminar</a></li>
+            <li><a href="../usuario.html" class="text-blue-500 hover:text-blue-400 transition">Usuario</a></li>
+            <li><button id="logoutBtn" class="text-red-500 hover:text-red-400 transition">Cerrar Sesión</button></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container mx-auto px-6 py-10 flex-1">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 max-w-lg mx-auto">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">✏️ Editar Mascota</h2>
+            <form id="form-editar" class="space-y-4">
+                <input type="hidden" id="pet-id">
+                
+                <div>
+                    <label for="nombre" class="block text-gray-700 dark:text-gray-300 font-semibold">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Nombre" 
+                        class="w-full mt-1 p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                </div>
+
+                <div>
+                    <label for="fecha" class="block text-gray-700 dark:text-gray-300 font-semibold">Fecha de Nacimiento</label>
+                    <input type="date" id="fecha" 
+                        class="w-full mt-1 p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                </div>
+
+                <div>
+                    <label for="peso" class="block text-gray-700 dark:text-gray-300 font-semibold">Peso (kg)</label>
+                    <input type="number" step="any" id="peso" placeholder="Peso (kg)" min="0"
+                        class="w-full mt-1 p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                </div>
+
+                <div>
+                    <label for="tipo" class="block text-gray-700 dark:text-gray-300 font-semibold">Tipo</label>
+                    <input type="text" id="tipo" placeholder="Ej: Perro, Gato..." 
+                        class="w-full mt-1 p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                </div>
+
+                <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                    Guardar Cambios
+                </button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

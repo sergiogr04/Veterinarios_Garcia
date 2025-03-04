@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Mascotas</title>
+    <link rel="icon" type="image/x-icon" href="../../resources/icon.ico">
+
+    <!-- Cargar Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- JavaScript -->
+    <script src="../../js/crud/eliminar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center gap-x-2">
+            <div class="relative w-14 md:w-16 lg:w-20 h-14 md:h-16 lg:h-20">
+                <a href="principal.html">
+                    <img src="../../resources/imagenes/logo-dark.png" alt="logo" class="absolute inset-0 w-full h-full object-contain hidden dark:block">
+                </a>
+            </div>
+            <a href="principal.html">
+                <h1 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Veterinarios García</h1>
+            </a>
+        </div>
+        <ul class="flex space-x-6">
+            <li><a href="alta.html" class="text-lg font-medium text-blue-600 dark:text-blue-300 hover:text-blue-400 transition">Alta</a></li>
+            <li><a href="modificar.html" class="text-lg font-medium text-blue-600 dark:text-blue-300 hover:text-blue-400 transition">Modificar</a></li>
+            <li><a href="eliminar.html" class="text-lg font-medium text-blue-600 dark:text-blue-300 hover:text-blue-400 transition">Eliminar</a></li>
+            <li><a href="../usuario.html" class="text-lg font-medium text-blue-600 dark:text-blue-300 hover:text-blue-400 transition">Usuario</a></li>
+            <li><button id="logoutBtn" class="text-lg font-medium text-red-500 dark:text-red-400 hover:text-red-600 transition">Cerrar Sesión</button></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container mx-auto p-6 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mb-6">🔎 Filtrar Mascotas</h2>
+
+        <!-- FORMULARIO DE FILTRO -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+                <label for="filtro-dni" class="block text-lg font-medium text-gray-700 dark:text-gray-300">DNI</label>
+                <input type="text" id="filtro-dni" placeholder="Ej: 20094973B" class="border border-gray-300 dark:border-gray-600 p-3 w-full rounded-md focus:ring-2 focus:ring-red-500 focus:outline-none text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label for="filtro-nombre" class="block text-lg font-medium text-gray-700 dark:text-gray-300">Nombre Mascota</label>
+                <input type="text" id="filtro-nombre" placeholder="Ej: Luna" class="border border-gray-300 dark:border-gray-600 p-3 w-full rounded-md focus:ring-2 focus:ring-red-500 focus:outline-none text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label for="filtro-correo" class="block text-lg font-medium text-gray-700 dark:text-gray-300">Correo Dueño</label>
+                <input type="text" id="filtro-correo" placeholder="Ej: dueño@email.com" class="border border-gray-300 dark:border-gray-600 p-3 w-full rounded-md focus:ring-2 focus:ring-red-500 focus:outline-none text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-700">
+            </div>
+
+            <div>
+                <label for="filtro-fecha" class="block text-lg font-medium text-gray-700 dark:text-gray-300">Fecha de Nacimiento</label>
+                <input type="date" id="filtro-fecha" class="border border-gray-300 dark:border-gray-600 p-3 w-full rounded-md focus:ring-2 focus:ring-red-500 focus:outline-none text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-700">
+            </div>
+        </div>
+
+        <!-- BOTÓN FILTRAR -->
+        <div class="text-center mt-4">
+            <button id="btn-filtrar" class="w-1/3 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition">🔍 Filtrar</button>
+        </div>
+
+        <!-- TABLA DE RESULTADOS -->
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200 mt-10">📋 Listado de Mascotas</h2>
+        <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-6">
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                        <th class="border p-3">ID</th>
+                        <th class="border p-3">Nombre</th>
+                        <th class="border p-3">DNI</th>
+                        <th class="border p-3">Correo</th>
+                        <th class="border p-3">Dueño</th>
+                        <th class="border p-3">Tipo</th>
+                        <th class="border p-3">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-mascotas" class="text-center">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

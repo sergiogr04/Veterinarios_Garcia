@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinarios García</title>
+    <link rel="icon" type="image/x-icon" href="../resources/icon.ico">
+    <!-- Aplicar tema antes de que se renderice la página -->
+    <script>
+        (function() {
+            let storedTheme = localStorage.getItem("theme") || "dark"; 
+            if (storedTheme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        })();
+    </script>
+    
+
+    <!-- Cargar Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (typeof tailwind !== 'undefined') {
+            tailwind.config = {
+                darkMode: 'class'
+            };
+        }
+    </script>
+    
+    <script src="../js/index.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">    
+    <!-- HEADER -->
+    <header class="bg-white shadow-md dark:bg-gray-800">
+        <div class="px-4 md:px-6 lg:px-8 py-2 flex justify-between items-center">
+            <!-- Contenedor del logo y nombre -->
+            <div class="flex items-center gap-x-2">
+                <div class="relative w-14 md:w-16 lg:w-20 h-14 md:h-16 lg:h-20">
+                    <a href="index.html">
+                        <img src="../resources/imagenes/logo-light.png" alt="logo" class="absolute inset-0 w-full h-full object-contain dark:hidden">
+                        <img src="../resources/imagenes/logo-dark.png" alt="logo" class="absolute inset-0 w-full h-full object-contain hidden dark:block">
+                    </a>
+                </div>
+                <a href="index.html">
+                    <h1 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Veterinarios García</h1>
+                </a>
+            </div>
+    
+            <!-- Menú de navegación -->
+            <nav>
+                <ul class="flex space-x-4 text-lg">
+                    <li><a href="login.html" class="hover:text-blue-600 dark:hover:text-blue-400">Login</a></li>
+                    <li><a href="#quienes-somos" class="hover:text-blue-600 dark:hover:text-blue-400">Quiénes Somos</a></li>
+                    <li><a href="#servicios" class="hover:text-blue-600 dark:hover:text-blue-400">Servicios</a></li>
+                    <li><a href="#testimonios" class="hover:text-blue-600 dark:hover:text-blue-400">Testimonios</a></li>
+                    <li><a href="#contacto" class="hover:text-blue-600 dark:hover:text-blue-400">Contacto</a></li>
+                    <li><a href="#ubicacion" class="hover:text-blue-600 dark:hover:text-blue-400">Ubicación</a></li>
+                    <li>
+                        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-700 px-4 py-1 rounded-lg">
+                            🌙
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white text-center"
+        style="background-image: url('https://source.unsplash.com/1600x900/?veterinary,pets');">
+        <div class="bg-black bg-opacity-50 p-10 rounded-lg">
+            <h2 class="text-4xl font-bold">Cuidamos a tus mascotas como si fueran nuestras</h2>
+            <p class="mt-4 text-lg">Expertos en salud animal con atención de calidad.</p>
+            <a href="login.html"
+                class="mt-6 inline-block bg-blue-600 hover:bg-blue-500 text-white text-lg font-semibold py-3 px-6 rounded-lg">
+                Agenda tu cita
+            </a>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="container mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8">Nuestros Servicios</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-lg hover:scale-105 transition-transform">
+                <img src="../resources/imagenes/vetenirario.jpg" class="rounded-md mb-4">
+                <h3 class="text-xl font-bold">Consultas Veterinarias</h3>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Atención personalizada para cada mascota.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-lg hover:scale-105 transition-transform">
+                <img src="../resources/imagenes/vacuna.jpg" class="rounded-md mb-4">
+                <h3 class="text-xl font-bold">Vacunación y Desparasitación</h3>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Protege a tu mascota con las mejores vacunas.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-lg hover:scale-105 transition-transform">
+                <img src="../resources/imagenes/cirugia.jpg" class="rounded-md mb-4">
+                <h3 class="text-xl font-bold">Cirugías y Urgencias</h3>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Atención especializada para intervenciones quirúrgicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="bg-gray-200 dark:bg-gray-800 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8">Lo que dicen nuestros clientes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <p class="italic">"Veterinarios García salvó la vida de mi perro, ¡los mejores!"</p>
+                    <h4 class="text-lg font-bold mt-4">- María Fernández</h4>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <p class="italic">"Trato excelente y precios justos. Mis gatos están en las mejores manos."</p>
+                    <h4 class="text-lg font-bold mt-4">- Pablo Martínez</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="bg-gray-100 dark:bg-gray-900 py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <!-- Texto -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">¿Quiénes Somos?</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Somos un equipo de veterinarios apasionados por el bienestar animal, con más de 10 años de experiencia en la salud y cuidado de mascotas.
+                </p>
+            </div>
+
+            <!-- Imagen -->
+            <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+                <img src="../resources/imagenes/quienesSomos.jpg" class="rounded-lg shadow-lg w-full max-w-md">
+            </div>
+        </div>
+    </section>
+    <!-- MAPA DE GOOGLE MAPS -->
+    <section id="ubicacion" class="bg-gray-200 dark:bg-gray-800 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">📍 Nuestra Ubicación</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Ven a visitarnos en nuestra clínica veterinaria.</p>
+
+            <!-- Enlace a Google Maps con el mapa dentro -->
+            <a href="https://www.google.com/maps?q=37.34838133391957, -5.843473813812756" target="_blank" class="block mx-auto max-w-3xl hover:scale-105 transition-transform">
+                <div class="rounded-lg shadow-lg overflow-hidden">
+                    <img src="../resources/imagenes/maps.png" alt="">
+                </div>
+            </a>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">Haz clic en el mapa para abrir Google Maps</p>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="bg-gray-100 dark:bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 text-center mb-6">Contáctanos</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-800 dark:text-gray-300 font-semibold mb-2">Nombre</label>
+                        <input type="text" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-800 dark:text-gray-300 font-semibold mb-2">Correo</label>
+                        <input type="email" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-800 dark:text-gray-300 font-semibold mb-2">Mensaje</label>
+                        <textarea class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 h-32 resize-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 Veterinarios García. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

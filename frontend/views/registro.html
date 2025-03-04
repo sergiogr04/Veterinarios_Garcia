@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" type="image/x-icon" href="../resources/icon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Barra de navegación con botón de volver -->
+    <nav class="bg-gray-800 w-full py-4 px-8 flex justify-between items-center fixed top-0 shadow-lg">
+        <div class="flex items-center gap-x-2">
+            <div class="relative w-14 md:w-16 lg:w-20 h-14 md:h-16 lg:h-20">
+                <a href="index.html">
+                    <img src="../resources/imagenes/logo-dark.png" alt="logo" class="absolute inset-0 w-full h-full object-contain hidden dark:block">
+                </a>
+            </div>
+            <a href="index.html">
+                <h1 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Veterinarios García</h1>
+            </a>
+        </div>
+        <button onclick="window.location.href='login.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md text-sm transition">
+            ⬅ Volver
+        </button>
+    </nav>
+
+    <!-- Contenedor de Registro -->
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96 mt-20 text-center">
+
+        <!-- Título -->
+        <h2 class="text-2xl font-bold mb-6 text-blue-400">Registro</h2>
+
+        <!-- Formulario -->
+        <form id="registerForm" >
+            <label class="block mb-2 text-left">Nombre Completo:</label>
+            <input type="text" id="nombre" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+
+            <label class="block mb-2 text-left">Correo Electrónico:</label>
+            <input type="email" id="correo" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+
+            <label class="block mb-2 text-left">DNI:</label>
+            <input type="text" id="dni" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+
+            <label class="block mb-2 text-left">Contraseña:</label>
+            <input type="password" id="password" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+
+            <label class="block mb-2 text-left">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+                Registrarse
+            </button>
+        </form>
+        <!-- Mensaje de éxito -->
+        <div id="successMessage"></div>
+
+        <!-- Enlace a Iniciar Sesión -->
+        <p class="mt-4">
+            ¿Ya tienes cuenta? 
+            <a href="login.html" class="text-blue-400 hover:underline">Inicia sesión aquí</a>
+        </p>
+    </div>
+
+    <script src="../js/registro.js"></script>
+
+</body>
+</html>

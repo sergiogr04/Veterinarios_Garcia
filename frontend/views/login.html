@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="icon" type="image/x-icon" href="../resources/icon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Barra de navegación con botón de volver -->
+    <nav class="bg-gray-800 w-full py-4 px-8 flex justify-between items-center fixed top-0 shadow-lg">
+        <div class="flex items-center gap-x-2">
+            <div class="relative w-14 md:w-16 lg:w-20 h-14 md:h-16 lg:h-20">
+                <a href="index.html">
+                    <img src="../resources/imagenes/logo-light.png" alt="logo" class="absolute inset-0 w-full h-full object-contain dark:hidden">
+                    <img src="../resources/imagenes/logo-dark.png" alt="logo" class="absolute inset-0 w-full h-full object-contain hidden dark:block">
+                </a>
+            </div>
+            <a href="index.html">
+                <h1 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Veterinarios García</h1>
+            </a>
+        </div>
+        <button onclick="window.location.href='index.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md text-sm transition">
+            ⬅ Volver
+        </button>
+    </nav>
+
+    <!-- Contenedor de Login -->
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96 mt-20 text-center">
+
+        <!-- Título -->
+        <h2 class="text-2xl font-bold mb-6 text-blue-400">Iniciar Sesión</h2>
+
+        <!-- Formulario -->
+        <form id="loginForm">
+            <label class="block mb-2 text-left">Correo:</label>
+            <input type="email" id="email" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+            
+            <label class="block mb-2 text-left">Contraseña:</label>
+            <input type="password" id="password" class="w-full p-2 border rounded-md mb-4 bg-gray-700 text-white focus:ring-2 focus:ring-blue-400" required>
+            
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+                Ingresar
+            </button>
+        </form>
+
+        <!-- Mensaje de error -->
+        <p id="errorMessage" class="text-red-500 mt-2"></p>
+
+        <!-- Sección de Registro -->
+        <p class="mt-4">
+            ¿No tienes cuenta? 
+            <a href="registro.html" class="text-blue-400 hover:underline">Regístrate aquí</a>
+        </p>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
